@@ -23,3 +23,8 @@ def remove_bg():
     white_bg.convert("RGB").save(img_io, 'JPEG', quality=95)
     img_io.seek(0)
     return send_file(img_io, mimetype='image/jpeg')
+
+import os
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
